@@ -2,7 +2,7 @@
 Aplicativo que cadastra alunos e suas notas para que seja exibido o status de aprovação.
 
 ## Objetivo
-O aplicativo foi criado com intuito de familiarização e entendimento dos principais conceitos do Ionic 1 (AngularJS), dos quais:
+O aplicativo foi criado com intuito de familiarização e entendimento dos principais conceitos do **Ionic 1 (AngularJS)**, dos quais:
 
 1) Organização e estrutura do modelo MVC.
 2) Utilização de componentes próprios (alerts, toasts)
