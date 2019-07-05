@@ -1,0 +1,39 @@
+<ion-view view-title="Alunos">
+  <ion-content class="padding">
+    <div class="titulo">Cadastro de aluno</div>
+
+    <div class="row">
+      <form class="col s12">
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="nome" type="text" class="validate" ng-model="aluno.nome">
+            <label for="nome">Nome</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" class="validate" ng-model="aluno.email">
+            <label for="email">Email</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="nota1" type="number" class="validate" ng-model="aluno.nota1">
+            <label for="nota1">Nota Parcial</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="nota2" type="number" class="validate" ng-model="aluno.nota2">
+            <label for="nota2">Nota Bimestral</label>
+          </div>
+        </div>
+
+        <a class="waves-effect waves-light btn" ng-color="energized" ng-click="add(aluno)">Cadastrar</a>
+
+      </form>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,11 +1,6 @@
 {
-  "name": "My Ionic App",
-  "short_name": "My Ionic App",
+  "name": "Resultado de Provas",
+  "short_name": "Provas",
   "start_url": "index.html",
-  "display": "standalone",
-  "icons": [{
-    "src": "icon.png",
-    "sizes": "512x512",
-    "type": "image/png"
-  }]
+  "display": "standalone"
 }

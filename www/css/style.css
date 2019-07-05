@@ -1,1 +1,64 @@
 /* Empty. Add your own CSS if you like */
+
+.titulo {
+    font-size: 1.5em !important;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    text-align: center;
+}
+
+ion-header-bar {
+    background: #005B91!important;
+}
+
+ion-header-bar > div.title {
+    color: white !important;
+}
+
+a.btn {
+    background: #005B91!important;
+    color: white;
+}
+
+.toggle input:checked + .track {
+    background: #005B91!important;
+    border-color: #005B91 !important;
+}
+
+p.notas {
+    font-size: 0.9em;
+}
+span.destaque {
+    font-weight: bold;
+}
+p.media {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 8px;
+}
+span.aprovado {
+    color:green;
+}
+span.reprovado {
+    color: red;
+}
+.container {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.empty {
+    font-size: 1.2em;
+    color: #aaa;
+    margin-top: 5em;
+    text-align: center;
+}
+
+input[text] {
+    border-bottom: 1px solid #ddd;
+}
+
+p.pesquise {
+    margin-top: 3em;
+    margin-bottom: 0px;
+    color: #888;
+}

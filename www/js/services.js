@@ -1,50 +1,53 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function() {
-  // Might use a resource here that returns a JSON array
+  //Para compartilhar escopos entre controllers
+  .factory('Scopes', function ($rootScope) {
+    var mem = {};
 
-  // Some fake testing data
-  var chats = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'img/ben.png'
-  }, {
-    id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
-  }, {
-    id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
-  }, {
-    id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
-  }, {
-    id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
-  }];
-
-  return {
-    all: function() {
-      return chats;
-    },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
-        }
+    return {
+      store: function (key, value) {
+        mem[key] = value;
+      },
+      get: function (key) {
+        return mem[key];
       }
-      return null;
-    }
-  };
-});
+    };
+  })
+
+  .factory('Alunos', function () {
+
+    // Might use a resource here that returns a JSON array
+
+    var alunos = [];
+
+    return {
+      all: function () {
+        return alunos;
+      },
+      remove: function (aluno) {
+        alunos.splice(alunos.indexOf(aluno), 1);
+      },
+
+      add: function (aluno) {
+        alunos.push(aluno);
+        aluno = {};
+      },
+
+      get: function (alunoId) {
+        for (var i = 0; i < alunos.length; i++) {
+          if (alunos[i].id === parseInt(alunoId)) {
+            return alunos[i];
+          }
+        }
+        return null;
+      },
+      update: function (newAluno) {
+        return alunos.map(function (aluno) {
+          if (aluno.id === parseInt(newAluno.id)) {
+            return newAluno;
+          }
+          return aluno;
+        })
+      }
+    };
+  })

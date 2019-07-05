@@ -1,0 +1,36 @@
+<ion-view view-title="Resultados">
+  <ion-content class="container" ng-if="alunos && alunos.length > 0">
+    <ion-list class="container">
+      <div class="row">
+        <p class="pesquise">Pesquise pelo nome, email ou nota do aluno</p>
+      </div>
+      <div class="row">
+        <input type="text" id="busca" ng-model="busca" placeholder="Buscar...">
+      </div>
+      <div ng-repeat="aluno in alunos | filter:busca">
+        <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap"
+          ng-if="mostrarAluno(aluno)">
+          <img ng-src="./img/placeholder.png">
+          <h2>{{aluno.nome}}</h2>
+          <p>{{aluno.email}}</p>
+          <p class="notas">Parcial: <span class="destaque">{{(aluno.nota1).toFixed(2)}}</span> <span
+              style="margin-left: 6px">Bimestral:
+              <span class="destaque">{{(aluno.nota2).toFixed(2)}}</span></span></p>
+          <p class="media">Média: {{aluno.media}} <span ng-if="aluno.media >=7"
+              ng-class="{aprovado:aluno.media >=7 }">[APROVADO]</span> <span ng-if="aluno.media < 7"
+              ng-class="{reprovado:aluno.media < 7 }">[REPROVADO]</span>
+          </p>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+          <ion-option-button class="button-assertive" ng-click="remove(aluno)">
+            Remover
+          </ion-option-button>
+        </ion-item>
+      </div>
+    </ion-list>
+  </ion-content>
+  <ion-content ng-if="!(alunos && alunos.length > 0)">
+    <p class="empty">
+      Você ainda não tem alunos cadastrados.
+    </p>
+  </ion-content>
+</ion-view>
